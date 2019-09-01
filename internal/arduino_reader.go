@@ -16,19 +16,19 @@ type TimeSeriesData struct {
     Status string `json:"status,omitempty"`
     Runtime int `json:"runtime,omitempty"`
     Id int `json:"id,omitempty"`
-    HumidityValue float64 `json:"humidity_value,omitempty"`
+    HumidityValue float32 `json:"humidity_value,omitempty"`
     HumidityUnit string `json:"humidity_unit,omitempty"`
-    TemperatureValue float64 `json:"temperature_primary_value,omitempty"`
+    TemperatureValue float32 `json:"temperature_primary_value,omitempty"`
     TemperatureUnit string `json:"temperature_primary_unit,omitempty"`
-    PressureValue float64 `json:"pressure_value,omitempty"`
+    PressureValue float32 `json:"pressure_value,omitempty"`
     PressureUnit string `json:"pressure_unit,omitempty"`
-    TemperatureBackupValue float64 `json:"temperature_secondary_value,omitempty"`
+    TemperatureBackupValue float32 `json:"temperature_secondary_value,omitempty"`
     TemperatureBackupUnit string `json:"temperature_secondary_unit,omitempty"`
-    AltitudeValue float64 `json:"altitude_value,omitempty"`
+    AltitudeValue float32 `json:"altitude_value,omitempty"`
     AltitudeUnit string `json:"altitude_unit,omitempty"`
-    IlluminanceValue float64 `json:"illuminance_value,omitempty"`
+    IlluminanceValue float32 `json:"illuminance_value,omitempty"`
     IlluminanceUnit string `json:"illuminance_unit,omitempty"`
-    SoilMoistureValue float64 `json:"soil_moisture_value,omitempty"`
+    SoilMoistureValue float32 `json:"soil_moisture_value,omitempty"`
     SoilMoistureUnit string `json:"soil_moisture_unit,omitempty"`
     Timestamp int64 `json:"timestamp,omitempty"`
 }

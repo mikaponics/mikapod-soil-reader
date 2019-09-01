@@ -25,7 +25,7 @@ message SensorsDataResponse {
     float humidityValue = 3;
     string humidityUnit = 4;
     float temperatureValue = 5;
-    float temperatureUnit = 6;
+    string temperatureUnit = 6;
     float pressureValue = 7;
     string pressureUnit = 8;
     float temperatureBackupValue = 9;
