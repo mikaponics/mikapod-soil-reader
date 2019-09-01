@@ -12,14 +12,14 @@ import "google/protobuf/timestamp.proto";
 // $ protoc --go_out=plugins=grpc:. api/reader.proto
 
 service MikapodSoilReader {
-    rpc GetData (PollSensorsRequest) returns (SensorsDataResponse) {}
+    rpc GetData (GetTimeSeriesData) returns (TimeSeriesDataResponse) {}
 
     // https://grpc.io/docs/tutorials/basic/go/
 }
 
-message PollSensorsRequest {}
+message GetTimeSeriesData {}
 
-message SensorsDataResponse {
+message TimeSeriesDataResponse {
     bool status = 1;
     google.protobuf.Timestamp timestamp = 2;
     float humidityValue = 3;

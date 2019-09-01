@@ -25,38 +25,38 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type PollSensorsRequest struct {
+type GetTimeSeriesData struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *PollSensorsRequest) Reset()         { *m = PollSensorsRequest{} }
-func (m *PollSensorsRequest) String() string { return proto.CompactTextString(m) }
-func (*PollSensorsRequest) ProtoMessage()    {}
-func (*PollSensorsRequest) Descriptor() ([]byte, []int) {
+func (m *GetTimeSeriesData) Reset()         { *m = GetTimeSeriesData{} }
+func (m *GetTimeSeriesData) String() string { return proto.CompactTextString(m) }
+func (*GetTimeSeriesData) ProtoMessage()    {}
+func (*GetTimeSeriesData) Descriptor() ([]byte, []int) {
 	return fileDescriptor_d68806bd2ba4ed74, []int{0}
 }
 
-func (m *PollSensorsRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_PollSensorsRequest.Unmarshal(m, b)
+func (m *GetTimeSeriesData) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetTimeSeriesData.Unmarshal(m, b)
 }
-func (m *PollSensorsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_PollSensorsRequest.Marshal(b, m, deterministic)
+func (m *GetTimeSeriesData) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetTimeSeriesData.Marshal(b, m, deterministic)
 }
-func (m *PollSensorsRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PollSensorsRequest.Merge(m, src)
+func (m *GetTimeSeriesData) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetTimeSeriesData.Merge(m, src)
 }
-func (m *PollSensorsRequest) XXX_Size() int {
-	return xxx_messageInfo_PollSensorsRequest.Size(m)
+func (m *GetTimeSeriesData) XXX_Size() int {
+	return xxx_messageInfo_GetTimeSeriesData.Size(m)
 }
-func (m *PollSensorsRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_PollSensorsRequest.DiscardUnknown(m)
+func (m *GetTimeSeriesData) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetTimeSeriesData.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_PollSensorsRequest proto.InternalMessageInfo
+var xxx_messageInfo_GetTimeSeriesData proto.InternalMessageInfo
 
-type SensorsDataResponse struct {
+type TimeSeriesDataResponse struct {
 	Status                 bool                 `protobuf:"varint,1,opt,name=status,proto3" json:"status,omitempty"`
 	Timestamp              *timestamp.Timestamp `protobuf:"bytes,2,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
 	HumidityValue          float32              `protobuf:"fixed32,3,opt,name=humidityValue,proto3" json:"humidityValue,omitempty"`
@@ -78,137 +78,137 @@ type SensorsDataResponse struct {
 	XXX_sizecache          int32                `json:"-"`
 }
 
-func (m *SensorsDataResponse) Reset()         { *m = SensorsDataResponse{} }
-func (m *SensorsDataResponse) String() string { return proto.CompactTextString(m) }
-func (*SensorsDataResponse) ProtoMessage()    {}
-func (*SensorsDataResponse) Descriptor() ([]byte, []int) {
+func (m *TimeSeriesDataResponse) Reset()         { *m = TimeSeriesDataResponse{} }
+func (m *TimeSeriesDataResponse) String() string { return proto.CompactTextString(m) }
+func (*TimeSeriesDataResponse) ProtoMessage()    {}
+func (*TimeSeriesDataResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_d68806bd2ba4ed74, []int{1}
 }
 
-func (m *SensorsDataResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_SensorsDataResponse.Unmarshal(m, b)
+func (m *TimeSeriesDataResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_TimeSeriesDataResponse.Unmarshal(m, b)
 }
-func (m *SensorsDataResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_SensorsDataResponse.Marshal(b, m, deterministic)
+func (m *TimeSeriesDataResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_TimeSeriesDataResponse.Marshal(b, m, deterministic)
 }
-func (m *SensorsDataResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SensorsDataResponse.Merge(m, src)
+func (m *TimeSeriesDataResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_TimeSeriesDataResponse.Merge(m, src)
 }
-func (m *SensorsDataResponse) XXX_Size() int {
-	return xxx_messageInfo_SensorsDataResponse.Size(m)
+func (m *TimeSeriesDataResponse) XXX_Size() int {
+	return xxx_messageInfo_TimeSeriesDataResponse.Size(m)
 }
-func (m *SensorsDataResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_SensorsDataResponse.DiscardUnknown(m)
+func (m *TimeSeriesDataResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_TimeSeriesDataResponse.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_SensorsDataResponse proto.InternalMessageInfo
+var xxx_messageInfo_TimeSeriesDataResponse proto.InternalMessageInfo
 
-func (m *SensorsDataResponse) GetStatus() bool {
+func (m *TimeSeriesDataResponse) GetStatus() bool {
 	if m != nil {
 		return m.Status
 	}
 	return false
 }
 
-func (m *SensorsDataResponse) GetTimestamp() *timestamp.Timestamp {
+func (m *TimeSeriesDataResponse) GetTimestamp() *timestamp.Timestamp {
 	if m != nil {
 		return m.Timestamp
 	}
 	return nil
 }
 
-func (m *SensorsDataResponse) GetHumidityValue() float32 {
+func (m *TimeSeriesDataResponse) GetHumidityValue() float32 {
 	if m != nil {
 		return m.HumidityValue
 	}
 	return 0
 }
 
-func (m *SensorsDataResponse) GetHumidityUnit() string {
+func (m *TimeSeriesDataResponse) GetHumidityUnit() string {
 	if m != nil {
 		return m.HumidityUnit
 	}
 	return ""
 }
 
-func (m *SensorsDataResponse) GetTemperatureValue() float32 {
+func (m *TimeSeriesDataResponse) GetTemperatureValue() float32 {
 	if m != nil {
 		return m.TemperatureValue
 	}
 	return 0
 }
 
-func (m *SensorsDataResponse) GetTemperatureUnit() string {
+func (m *TimeSeriesDataResponse) GetTemperatureUnit() string {
 	if m != nil {
 		return m.TemperatureUnit
 	}
 	return ""
 }
 
-func (m *SensorsDataResponse) GetPressureValue() float32 {
+func (m *TimeSeriesDataResponse) GetPressureValue() float32 {
 	if m != nil {
 		return m.PressureValue
 	}
 	return 0
 }
 
-func (m *SensorsDataResponse) GetPressureUnit() string {
+func (m *TimeSeriesDataResponse) GetPressureUnit() string {
 	if m != nil {
 		return m.PressureUnit
 	}
 	return ""
 }
 
-func (m *SensorsDataResponse) GetTemperatureBackupValue() float32 {
+func (m *TimeSeriesDataResponse) GetTemperatureBackupValue() float32 {
 	if m != nil {
 		return m.TemperatureBackupValue
 	}
 	return 0
 }
 
-func (m *SensorsDataResponse) GetTemperatureBackupUnit() string {
+func (m *TimeSeriesDataResponse) GetTemperatureBackupUnit() string {
 	if m != nil {
 		return m.TemperatureBackupUnit
 	}
 	return ""
 }
 
-func (m *SensorsDataResponse) GetAltitudeValue() float32 {
+func (m *TimeSeriesDataResponse) GetAltitudeValue() float32 {
 	if m != nil {
 		return m.AltitudeValue
 	}
 	return 0
 }
 
-func (m *SensorsDataResponse) GetAltitudeUnit() string {
+func (m *TimeSeriesDataResponse) GetAltitudeUnit() string {
 	if m != nil {
 		return m.AltitudeUnit
 	}
 	return ""
 }
 
-func (m *SensorsDataResponse) GetIlluminanceValue() float32 {
+func (m *TimeSeriesDataResponse) GetIlluminanceValue() float32 {
 	if m != nil {
 		return m.IlluminanceValue
 	}
 	return 0
 }
 
-func (m *SensorsDataResponse) GetIlluminanceUnit() string {
+func (m *TimeSeriesDataResponse) GetIlluminanceUnit() string {
 	if m != nil {
 		return m.IlluminanceUnit
 	}
 	return ""
 }
 
-func (m *SensorsDataResponse) GetSoilMoistureValue() float32 {
+func (m *TimeSeriesDataResponse) GetSoilMoistureValue() float32 {
 	if m != nil {
 		return m.SoilMoistureValue
 	}
 	return 0
 }
 
-func (m *SensorsDataResponse) GetSoilMoistureUnit() string {
+func (m *TimeSeriesDataResponse) GetSoilMoistureUnit() string {
 	if m != nil {
 		return m.SoilMoistureUnit
 	}
@@ -216,40 +216,39 @@ func (m *SensorsDataResponse) GetSoilMoistureUnit() string {
 }
 
 func init() {
-	proto.RegisterType((*PollSensorsRequest)(nil), "api.PollSensorsRequest")
-	proto.RegisterType((*SensorsDataResponse)(nil), "api.SensorsDataResponse")
+	proto.RegisterType((*GetTimeSeriesData)(nil), "api.GetTimeSeriesData")
+	proto.RegisterType((*TimeSeriesDataResponse)(nil), "api.TimeSeriesDataResponse")
 }
 
 func init() { proto.RegisterFile("api/reader.proto", fileDescriptor_d68806bd2ba4ed74) }
 
 var fileDescriptor_d68806bd2ba4ed74 = []byte{
-	// 404 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x74, 0x93, 0xcf, 0x8e, 0xd3, 0x30,
-	0x10, 0x87, 0x49, 0x4b, 0xff, 0xb9, 0x2d, 0x6d, 0x0d, 0x94, 0xa8, 0x17, 0xa2, 0x88, 0x43, 0x84,
-	0x50, 0x2a, 0x15, 0x84, 0x38, 0x71, 0x40, 0x48, 0x9c, 0x2a, 0xa1, 0x14, 0xb8, 0xbb, 0x8d, 0xe9,
-	0x5a, 0x75, 0x62, 0x6f, 0x6c, 0x1f, 0xf6, 0xd1, 0xf6, 0xed, 0x56, 0x1e, 0x27, 0x6d, 0xd2, 0x74,
-	0x8f, 0xf9, 0x66, 0xf4, 0xcd, 0x4f, 0x93, 0x31, 0x9a, 0x13, 0xc9, 0xd6, 0x05, 0x25, 0x29, 0x2d,
-	0x62, 0x59, 0x08, 0x2d, 0x70, 0x97, 0x48, 0xb6, 0x7a, 0x7f, 0x14, 0xe2, 0xc8, 0xe9, 0x1a, 0xd0,
-	0xde, 0xfc, 0x5f, 0x6b, 0x96, 0x51, 0xa5, 0x49, 0x26, 0x5d, 0x57, 0xf8, 0x06, 0xe1, 0xdf, 0x82,
-	0xf3, 0x1d, 0xcd, 0x95, 0x28, 0x54, 0x42, 0xef, 0x0d, 0x55, 0x3a, 0x7c, 0xec, 0xa1, 0xd7, 0x25,
-	0xfa, 0x49, 0x34, 0x49, 0xa8, 0x92, 0x22, 0x57, 0x14, 0x2f, 0x51, 0x5f, 0x69, 0xa2, 0x8d, 0xf2,
-	0xbd, 0xc0, 0x8b, 0x86, 0x49, 0xf9, 0x85, 0xbf, 0xa1, 0xd1, 0x59, 0xec, 0x77, 0x02, 0x2f, 0x1a,
-	0x6f, 0x56, 0xb1, 0x1b, 0x1d, 0x57, 0xa3, 0xe3, 0x3f, 0x55, 0x47, 0x72, 0x69, 0xc6, 0x1f, 0xd0,
-	0xf4, 0xce, 0x64, 0x2c, 0x65, 0xfa, 0xe1, 0x1f, 0xe1, 0x86, 0xfa, 0xdd, 0xc0, 0x8b, 0x3a, 0x49,
-	0x13, 0xe2, 0x10, 0x4d, 0x2a, 0xf0, 0x37, 0x67, 0xda, 0x7f, 0x19, 0x78, 0xd1, 0x28, 0x69, 0x30,
-	0xfc, 0x11, 0xcd, 0x35, 0xcd, 0x24, 0x2d, 0x88, 0x36, 0x05, 0x75, 0xb2, 0x1e, 0xc8, 0x5a, 0x1c,
-	0x47, 0x68, 0x56, 0x63, 0xa0, 0xec, 0x83, 0xf2, 0x1a, 0xdb, 0x7c, 0xb2, 0xa0, 0x4a, 0x9d, 0x95,
-	0x03, 0x97, 0xaf, 0x01, 0x6d, 0xbe, 0x0a, 0x80, 0x6c, 0xe8, 0xf2, 0xd5, 0x19, 0xfe, 0x8a, 0x96,
-	0x35, 0xf9, 0x0f, 0x72, 0x38, 0x19, 0xe9, 0x94, 0x23, 0x50, 0x3e, 0x53, 0xc5, 0x5f, 0xd0, 0xdb,
-	0x56, 0x05, 0x86, 0x20, 0x18, 0x72, 0xbb, 0x68, 0x73, 0x13, 0xae, 0x99, 0x36, 0x69, 0x99, 0x7b,
-	0xec, 0x72, 0x37, 0xa0, 0xcd, 0x5d, 0x01, 0x50, 0x4e, 0x5c, 0xee, 0x3a, 0xb3, 0x7b, 0x65, 0x9c,
-	0x9b, 0x8c, 0xe5, 0x24, 0x3f, 0x94, 0xb2, 0xa9, 0xdb, 0xeb, 0x35, 0xb7, 0x7b, 0xad, 0x31, 0x50,
-	0xbe, 0x72, 0x7b, 0xbd, 0xc2, 0xf8, 0x13, 0x5a, 0x28, 0xc1, 0xf8, 0x56, 0x30, 0x75, 0xf9, 0x5d,
-	0x33, 0xd0, 0xb6, 0x0b, 0x36, 0x43, 0x1d, 0x82, 0x78, 0x0e, 0xe2, 0x16, 0xdf, 0xec, 0xd0, 0x62,
-	0xcb, 0x4e, 0x44, 0x8a, 0x74, 0x27, 0x18, 0x4f, 0xe0, 0x49, 0xe0, 0xef, 0x68, 0xf0, 0x8b, 0x6a,
-	0x7b, 0xcb, 0xf8, 0x5d, 0x4c, 0x24, 0x8b, 0xdb, 0x47, 0xbf, 0xf2, 0xa1, 0x70, 0xe3, 0xec, 0xc3,
-	0x17, 0xfb, 0x3e, 0x5c, 0xf1, 0xe7, 0xa7, 0x00, 0x00, 0x00, 0xff, 0xff, 0x60, 0x7b, 0xd8, 0x57,
-	0x67, 0x03, 0x00, 0x00,
+	// 400 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x74, 0x93, 0xc1, 0x6e, 0xd3, 0x40,
+	0x10, 0x86, 0x71, 0x4b, 0xd3, 0x66, 0xdb, 0xd2, 0x64, 0x11, 0x96, 0x15, 0x0e, 0x58, 0x16, 0x07,
+	0x0b, 0x21, 0x47, 0x2a, 0x08, 0x71, 0x44, 0x08, 0xa9, 0xa7, 0x5e, 0x9c, 0x84, 0xfb, 0x26, 0x1e,
+	0xc2, 0x28, 0xb6, 0x77, 0xe5, 0xdd, 0x3d, 0xf0, 0x6e, 0x3c, 0x1c, 0xda, 0xd9, 0x38, 0xb1, 0xe3,
+	0x70, 0xf4, 0x37, 0xa3, 0x6f, 0x7e, 0x8d, 0x67, 0xd9, 0x44, 0x28, 0x9c, 0x37, 0x20, 0x0a, 0x68,
+	0x32, 0xd5, 0x48, 0x23, 0xf9, 0xa5, 0x50, 0x38, 0x7b, 0xb7, 0x95, 0x72, 0x5b, 0xc2, 0x9c, 0xd0,
+	0xda, 0xfe, 0x9a, 0x1b, 0xac, 0x40, 0x1b, 0x51, 0x29, 0xdf, 0x95, 0xbc, 0x66, 0xd3, 0x27, 0x30,
+	0x4b, 0xac, 0x60, 0x01, 0x0d, 0x82, 0xfe, 0x21, 0x8c, 0x48, 0xfe, 0x5e, 0xb1, 0xb0, 0x8f, 0x72,
+	0xd0, 0x4a, 0xd6, 0x1a, 0x78, 0xc8, 0x46, 0xda, 0x08, 0x63, 0x75, 0x14, 0xc4, 0x41, 0x7a, 0x93,
+	0xef, 0xbf, 0xf8, 0x57, 0x36, 0x3e, 0xa8, 0xa3, 0x8b, 0x38, 0x48, 0x6f, 0x1f, 0x67, 0x99, 0x1f,
+	0x9e, 0xb5, 0xc3, 0xb3, 0x65, 0xdb, 0x91, 0x1f, 0x9b, 0xf9, 0x7b, 0x76, 0xff, 0xdb, 0x56, 0x58,
+	0xa0, 0xf9, 0xf3, 0x53, 0x94, 0x16, 0xa2, 0xcb, 0x38, 0x48, 0x2f, 0xf2, 0x3e, 0xe4, 0x09, 0xbb,
+	0x6b, 0xc1, 0xaa, 0x46, 0x13, 0xbd, 0x8c, 0x83, 0x74, 0x9c, 0xf7, 0x18, 0xff, 0xc0, 0x26, 0x06,
+	0x2a, 0x05, 0x8d, 0x30, 0xb6, 0x01, 0x2f, 0xbb, 0x22, 0xd9, 0x80, 0xf3, 0x94, 0x3d, 0x74, 0x18,
+	0x29, 0x47, 0xa4, 0x3c, 0xc5, 0x2e, 0x9f, 0x6a, 0x40, 0xeb, 0x83, 0xf2, 0xda, 0xe7, 0xeb, 0x41,
+	0x97, 0xaf, 0x05, 0x24, 0xbb, 0xf1, 0xf9, 0xba, 0x8c, 0x7f, 0x61, 0x61, 0x47, 0xfe, 0x5d, 0x6c,
+	0x76, 0x56, 0x79, 0xe5, 0x98, 0x94, 0xff, 0xa9, 0xf2, 0xcf, 0xec, 0xcd, 0xa0, 0x42, 0x43, 0x18,
+	0x0d, 0x39, 0x5f, 0x74, 0xb9, 0x45, 0x69, 0xd0, 0xd8, 0x62, 0x9f, 0xfb, 0xd6, 0xe7, 0xee, 0x41,
+	0x97, 0xbb, 0x05, 0xa4, 0xbc, 0xf3, 0xb9, 0xbb, 0xcc, 0xed, 0x15, 0xcb, 0xd2, 0x56, 0x58, 0x8b,
+	0x7a, 0xb3, 0x97, 0xdd, 0xfb, 0xbd, 0x9e, 0x72, 0xb7, 0xd7, 0x0e, 0x23, 0xe5, 0x2b, 0xbf, 0xd7,
+	0x13, 0xcc, 0x3f, 0xb2, 0xa9, 0x96, 0x58, 0x3e, 0x4b, 0xd4, 0xc7, 0xdf, 0xf5, 0x40, 0xda, 0x61,
+	0xc1, 0x65, 0xe8, 0x42, 0x12, 0x4f, 0x48, 0x3c, 0xe0, 0x8f, 0x2b, 0x36, 0x7d, 0xc6, 0x9d, 0x50,
+	0xb2, 0x58, 0x48, 0x2c, 0x73, 0x7a, 0x14, 0xfc, 0x1b, 0xbb, 0x7e, 0x02, 0xe3, 0x6e, 0x99, 0x87,
+	0x99, 0x50, 0x98, 0x0d, 0xce, 0x7e, 0xf6, 0x96, 0xf8, 0xf9, 0xc3, 0x4f, 0x5e, 0xac, 0x47, 0x74,
+	0xc7, 0x9f, 0xfe, 0x05, 0x00, 0x00, 0xff, 0xff, 0xb8, 0xde, 0x76, 0x51, 0x6b, 0x03, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -264,7 +263,7 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type MikapodSoilReaderClient interface {
-	GetData(ctx context.Context, in *PollSensorsRequest, opts ...grpc.CallOption) (*SensorsDataResponse, error)
+	GetData(ctx context.Context, in *GetTimeSeriesData, opts ...grpc.CallOption) (*TimeSeriesDataResponse, error)
 }
 
 type mikapodSoilReaderClient struct {
@@ -275,8 +274,8 @@ func NewMikapodSoilReaderClient(cc *grpc.ClientConn) MikapodSoilReaderClient {
 	return &mikapodSoilReaderClient{cc}
 }
 
-func (c *mikapodSoilReaderClient) GetData(ctx context.Context, in *PollSensorsRequest, opts ...grpc.CallOption) (*SensorsDataResponse, error) {
-	out := new(SensorsDataResponse)
+func (c *mikapodSoilReaderClient) GetData(ctx context.Context, in *GetTimeSeriesData, opts ...grpc.CallOption) (*TimeSeriesDataResponse, error) {
+	out := new(TimeSeriesDataResponse)
 	err := c.cc.Invoke(ctx, "/api.MikapodSoilReader/GetData", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -286,14 +285,14 @@ func (c *mikapodSoilReaderClient) GetData(ctx context.Context, in *PollSensorsRe
 
 // MikapodSoilReaderServer is the server API for MikapodSoilReader service.
 type MikapodSoilReaderServer interface {
-	GetData(context.Context, *PollSensorsRequest) (*SensorsDataResponse, error)
+	GetData(context.Context, *GetTimeSeriesData) (*TimeSeriesDataResponse, error)
 }
 
 // UnimplementedMikapodSoilReaderServer can be embedded to have forward compatible implementations.
 type UnimplementedMikapodSoilReaderServer struct {
 }
 
-func (*UnimplementedMikapodSoilReaderServer) GetData(ctx context.Context, req *PollSensorsRequest) (*SensorsDataResponse, error) {
+func (*UnimplementedMikapodSoilReaderServer) GetData(ctx context.Context, req *GetTimeSeriesData) (*TimeSeriesDataResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetData not implemented")
 }
 
@@ -302,7 +301,7 @@ func RegisterMikapodSoilReaderServer(s *grpc.Server, srv MikapodSoilReaderServer
 }
 
 func _MikapodSoilReader_GetData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PollSensorsRequest)
+	in := new(GetTimeSeriesData)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -314,7 +313,7 @@ func _MikapodSoilReader_GetData_Handler(srv interface{}, ctx context.Context, de
 		FullMethod: "/api.MikapodSoilReader/GetData",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MikapodSoilReaderServer).GetData(ctx, req.(*PollSensorsRequest))
+		return srv.(MikapodSoilReaderServer).GetData(ctx, req.(*GetTimeSeriesData))
 	}
 	return interceptor(ctx, in, info, handler)
 }
