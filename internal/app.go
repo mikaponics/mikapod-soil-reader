@@ -43,6 +43,9 @@ func (app *MikapodSoilReader) RunMainRuntimeLoop() {
     // Save reference to our application state.
     app.grpcServer = grpcServer
 
+    // For debugging purposes only.
+    log.Printf("READER: gRPC server ready and running.")
+
     // Block the main runtime loop for accepting and processing gRPC requests.
     pb.RegisterMikapodSoilReaderServer(grpcServer, &MikapodSoilReaderGRPC{
         // DEVELOPERS NOTE:
@@ -57,7 +60,7 @@ func (app *MikapodSoilReader) RunMainRuntimeLoop() {
 // Function will tell the application to stop the main runtime loop when
 // the process has been finished.
 func (app *MikapodSoilReader) StopMainRuntimeLoop() {
-    log.Printf("Starting graceful shutdown now...")
+    log.Printf("READER: Starting graceful shutdown now...")
 
     // Finish any RPC communication taking place at the moment before
     // shutting down the gRPC server.

@@ -41,7 +41,7 @@ type ArduinoReader struct {
 // Constructor used to intialize the serial reader designed to communicate
 // with Arduino configured for the `Mikapod Soil` settings.
 func ArduinoReaderInit(devicePath string) (* ArduinoReader)  {
-    log.Printf("LOGGER: Attempting to connect Arduino device...")
+    log.Printf("READER: Attempting to connect Arduino device...")
     c := &serial.Config{Name: devicePath, Baud: 9600}
     s, err := serial.OpenPort(c)
     if err != nil {
@@ -51,7 +51,7 @@ func ArduinoReaderInit(devicePath string) (* ArduinoReader)  {
     // DEVELOPERS NOTE:
     // The following code will warm up the Arduino device before we are
     // able to make calls to the external sensors.
-    log.Printf("LOGGER: Waiting for Arduino external sensors to warm up")
+    log.Printf("READER: Waiting for Arduino external sensors to warm up")
     ar := &ArduinoReader{serialPort: s}
     ar.Read()
     time.Sleep(5 * time.Second)
