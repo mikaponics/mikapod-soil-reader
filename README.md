@@ -167,7 +167,7 @@ The following instructions are specific to getting setup for [Raspberry Pi](http
 5. If the service is working correctly you should see something like this at the bottom:
 
     ```
-    raspberrypi systemd[1]: Started Mikapod Storage Daemon.
+    raspberrypi systemd[1]: Started Mikapod Soil Reader Daemon.
     ```
 
 6. Congradulations, you have setup instrumentation micro-service! All other micro-services can now poll the latest data from the soil-reader we have attached.
