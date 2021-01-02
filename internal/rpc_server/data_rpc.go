@@ -1,22 +1,16 @@
-package internal // github.com/mikaponics/mikapod-soil-reader/internal
+package rpc_server
 
 import (
-	"context"
-
-	"github.com/golang/protobuf/ptypes"
-
-	pb "github.com/mikaponics/mikapod-soil-reader/api"
+	c "github.com/mikaponics/mikapod-soil-reader/pkg/rpc_client"
 )
 
-type MikapodSoilReaderGRPC struct{
-	arduinoReader *ArduinoReader
-}
+func (rpc *RPC) GetData(request *c.GetDataRequest, response *c.GetDataResponse) (error) {
 
-func (s *MikapodSoilReaderGRPC) GetData(ctx context.Context, in *pb.GetTimeSeriesData) (*pb.TimeSeriesDataResponse, error) {
-	datum := s.arduinoReader.Read()
-	return &pb.TimeSeriesDataResponse{
-		Status: true,
-		Timestamp: ptypes.TimestampNow(), // Note: https://godoc.org/github.com/golang/protobuf/ptypes#Timestamp
+	datum := rpc.ArduinoReader.Read()
+
+	*response = *&c.GetDataResponse{
+		Status: "OK",
+		Timestamp: datum.Timestamp,
 		HumidityValue: datum.HumidityValue,
 		HumidityUnit: datum.HumidityUnit,
 		TemperatureValue: datum.TemperatureValue,
@@ -31,5 +25,6 @@ func (s *MikapodSoilReaderGRPC) GetData(ctx context.Context, in *pb.GetTimeSerie
 		IlluminanceUnit: datum.IlluminanceUnit,
 		SoilMoistureValue: datum.SoilMoistureValue,
 		SoilMoistureUnit: datum.SoilMoistureUnit,
-	}, nil
+	}
+	return nil //err
 }

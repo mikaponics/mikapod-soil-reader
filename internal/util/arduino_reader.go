@@ -1,4 +1,4 @@
-package internal // github.com/mikaponics/mikapod-soil-reader/internal
+package util // github.com/mikaponics/mikapod-soil-reader/internal/util
 
 import (
     "log"

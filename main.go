@@ -5,7 +5,7 @@ import (
 	"os/signal"
 	"syscall"
 
-    sr "github.com/mikaponics/mikapod-soil-reader/internal"
+    sr "github.com/mikaponics/mikapod-soil-reader/internal/app"
 )
 
 // DEVELOPERS NOTE:
