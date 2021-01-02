@@ -1,7 +1,7 @@
 package rpc_client
 
 import (
-	// "time"
+	"time"
 	// "errors"
 	// "database/sql"
 	"log"
@@ -32,7 +32,7 @@ type GetDataResponse struct {
     IlluminanceUnit string `json:"illuminance_unit,omitempty"`
     SoilMoistureValue float32 `json:"soil_moisture_value,omitempty"`
     SoilMoistureUnit string `json:"soil_moisture_unit,omitempty"`
-    Timestamp int64 `json:"timestamp,omitempty"`
+    Timestamp time.Time `json:"timestamp,omitempty"`
 }
 
 // RPC Calls
