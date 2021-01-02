@@ -24,13 +24,13 @@ You must have the following installed before proceeding. If you are missing any 
 
 1. Please visit the [Mikapod Soil (Arduino) device](https://github.com/mikaponics/mikapod-soil-arduino) repository and setup the external device and connect it to your development machine.
 
-2. Please find out what USB port your external device is connected on and export the following environment variable to your console. Note: please replace ``/dev/cu.usbmodem14201`` with the value on your machine.
+2. Please find out what USB port your external device is connected on and export the following environment variable to your console. Note: please replace ``/dev/cu.usbmodem14201`` with the value on your machine, a Raspberry Pi would most likely have the value ``/dev/ttyACM0``.
 
     ```
     export MIKAPOD_SOIL_READER_DEVICE_PATH=/dev/cu.usbmodem14201
     ```
 
-3. Get our latest code.
+3. Download the source code, build and install the application.
 
     ```
     GO111MODULE=on go get -u github.com/mikaponics/mikapod-soil-reader
@@ -39,8 +39,7 @@ You must have the following installed before proceeding. If you are missing any 
 4. Run our application.
 
     ```
-    cd github.com/mikaponics/mikapod-soil-reader
-    go run main.go
+    mikapod-soil-reader
     ```
 
 5. If you see a message saying ``Started soil reader service`` then the application has been successfully started.
