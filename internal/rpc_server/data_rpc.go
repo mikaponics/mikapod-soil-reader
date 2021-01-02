@@ -1,17 +1,11 @@
 package rpc_server
 
 import (
-	"log"
-
 	c "github.com/mikaponics/mikapod-soil-reader/pkg/rpc_client"
 )
 
 func (rpc *RPC) GetData(request *c.GetDataRequest, response *c.GetDataResponse) (error) {
-    log.Printf("Reading")
 	datum := rpc.ArduinoReader.Read()
-
-	log.Printf("Polled: \n%+v\n", datum)
-
 	*response = c.GetDataResponse{
 		Status: "OK",
 		Timestamp: datum.Timestamp,

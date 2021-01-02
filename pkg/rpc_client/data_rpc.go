@@ -38,8 +38,8 @@ type GetDataResponse struct {
 // RPC Calls
 
 func (s *MikapodSoilReaderService) GetData() (*GetDataResponse, error) {
-	var request *GetDataRequest
-	var response *GetDataResponse
+	request := new(GetDataRequest)
+	response := new(GetDataResponse)
 	rpcErr := s.Client.Call("RPC.GetData", &request, &response)
 	if rpcErr != nil {
 		log.Println("ERROR | MikapodSoilReaderService | GetData | rpcErr:", rpcErr)
