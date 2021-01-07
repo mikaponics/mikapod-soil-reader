@@ -27,7 +27,7 @@ You must have the following installed before proceeding. If you are missing any 
 2. Please find out what USB port your external device is connected on and export the following environment variable to your console. Note: please replace ``/dev/cu.usbmodem14201`` with the value on your machine, a Raspberry Pi would most likely have the value ``/dev/ttyACM0``.
 
     ```
-    export MIKAPOD_SOIL_READER_DEVICE_PATH=/dev/cu.usbmodem14201
+    export MIKAPOD_SOIL_READER_DEVICE_PATH=/dev/cu.usbmodem14301
     ```
 
 3. Download the source code, build and install the application.
