@@ -30,7 +30,7 @@ type TimeSeriesData struct {
     IlluminanceUnit string `json:"illuminance_unit,omitempty"`
     SoilMoistureValue float32 `json:"soil_moisture_value,omitempty"`
     SoilMoistureUnit string `json:"soil_moisture_unit,omitempty"`
-    Timestamp time.Time `json:"timestamp,omitempty"`
+    Timestamp int64 `json:"timestamp,omitempty"`
 }
 
 // The abstraction of the `Mikapod Soil` reader.
@@ -106,7 +106,6 @@ func (ar* ArduinoReader) Read() (*TimeSeriesData) {
     if err != nil {
         return nil
     }
-    // tsd.Timestamp = time.Now().Unix() // (DEPRECATED) Attach the timestamp to our time-series data.
-    tsd.Timestamp = time.Now() // Attach the timestamp to our time-series data.
+    tsd.Timestamp = time.Now().Unix()
     return &tsd
 }
