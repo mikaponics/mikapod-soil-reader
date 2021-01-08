@@ -20,8 +20,8 @@ func retryMultipleAndBlockingDailHTTP(addr string) (*rpc.Client) {
 		client, err := rpc.DialHTTP("tcp", addr)
 		if err != nil {
 			i = i + 1
-			if i == 100 {
-				log.Fatal("ERROR | MikapodSoilReaderService | New | Dialing TCP Error:", err)
+			if i >= 100 {
+				log.Fatal("ERROR | MikapodSoilReaderService | retryMultipleAndBlockingDailHTTP | Dialing TCP Error:", err)
 			}
 			time.Sleep(10 * time.Second)
 		} else {
