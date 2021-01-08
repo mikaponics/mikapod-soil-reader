@@ -1,4 +1,4 @@
-package pkg
+package constants
 
 // The local server configuration constants for this service.
 const (
